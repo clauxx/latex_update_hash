@@ -1,4 +1,4 @@
 #!/bin/bash
 
-pdflatex /home/clauxx/Documents/LaTeX\ documents/Paper_Auditing_1/main.tex
+pdflatex /home/chris/Documents/LaTeX_documents/paper_auditing_1/main.tex
 

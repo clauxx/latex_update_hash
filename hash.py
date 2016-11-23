@@ -11,15 +11,16 @@ def check():
     print(hash_2)
 
     if(hash_1 != hash_2):
-        subprocess.call("convert.sh", shell=TrueP)
+        subprocess.call("/home/chris/Documents/Python/latex_update_hash/convert.sh", shell=True)
         hash_1 = hash_2
 
 
 def read_file():
 
-    fd = open("/home/clauxx/Documents/LaTeX documents/Paper_Auditing_1/main.tex", 'r')
+    fd = open("/home/chris/Documents/LaTeX_documents/paper_auditing_1/main.tex", 'r')
     curr = fd.read()
     m = hashlib.md5()
+    m.update(curr.encode('utf-8'))
     hash_file = m.digest()
     fd.close()
     return hash_file
