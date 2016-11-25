@@ -1,0 +1,15 @@
+#!/bin/bash
+
+file=$1
+export path_to_file=`pwd`/$file	
+
+filename=$(basename "$file")
+extension="${filename##*.}"
+filename="${filename%.*}"
+
+pdfname="$filename"".pdf"
+zathura "$pdfname" &
+
+python3 /home/chris/Documents/Python/latex_update_hash/hash.py $path_to_file 
+
+
