@@ -1,4 +1,4 @@
 #!/bin/bash
 
-python3 /home/chris/Documents/Python/latex_update_hash/hash.py
+python3 /home/chris/Documents/python/latex_update_hash/hash.py
 

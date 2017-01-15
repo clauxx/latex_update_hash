@@ -8,8 +8,21 @@ extension="${filename##*.}"
 filename="${filename%.*}"
 
 pdfname="$filename"".pdf"
-zathura "$pdfname" &
+texname="$filename"".tex"
 
-python3 /home/chris/Documents/Python/latex_update_hash/hash.py $path_to_file 
+#if the file already exists - run, if not - copy the ground.tex to the path and run
+if [ -f "$pdfname" ]
+then 
+    zathura "$pdfname" &
+    python3 /home/chris/Documents/python/latex_update_hash/hash.py $path_to_file &>/dev/null &
+    vim $texname
+else
+    cp /home/chris/Documents/python/latex_update_hash/ground.tex $path_to_file
+    mv ground.tex $texname
+    pdflatex "$texname"
+    zathura "$pdfname" &
+    python3 /home/chris/Documents/python/latex_update_hash/hash.py $path_to_file &>/dev/null &
+    vim $texname
+fi
 
-
+    

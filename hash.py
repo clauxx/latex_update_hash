@@ -10,7 +10,7 @@ def check():
     hash_2 = read_file()
         
     if(hash_1 != hash_2):
-        subprocess.call("/home/chris/Documents/Python/latex_update_hash/convert.sh", shell=True)
+        subprocess.call("/home/chris/Documents/python/latex_update_hash/convert.sh", shell=True)
         hash_1 = hash_2
 
 #opening a file and creating the hash
