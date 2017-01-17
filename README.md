@@ -1,4 +1,4 @@
-# latex_update_hash
+# offtex
 Offline editing .tex files with live .pdf updates from the terminal using any text editor.
 
 - copy the `offtex` file into the `/bin` folder
